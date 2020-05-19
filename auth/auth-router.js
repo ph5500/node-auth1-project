@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs");
 const router = require("express").Router();
 
 const Users = require("../users/users-model");
+
 const { isValid } = require('../users/users-router')//need to look at
 
 
@@ -53,6 +54,7 @@ router.post("/login", (req, res) => {
                 res.status(500).json(err);
             });
     }
+
 });
 
 router.get("/logout", (req, res) => {

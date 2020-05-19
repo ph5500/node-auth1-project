@@ -1,5 +1,6 @@
 const router = require("express").Router();
 
+
 const Users = require('./users-model')
 
 function restricted(req, res, next) {

@@ -1,5 +1,6 @@
 const express = require("express");
 const helmet = require("helmet");
+
 const cors = require("cors");
 const session = require('express-session');
 // const knexStore = require('connect-session-knex')(session);
@@ -10,9 +11,11 @@ const session = require('express-session');
 const usersRouter = require('../users/users-router')
 const authRouter = require('../auth/auth-router')
 
+
 const server = express();
 
 const sessionConfig = {
+
     cookie: {
         maxAge: 1000 * 60 * 15,
         secure: process.env.SECURE_COOKIE || false,
@@ -34,6 +37,7 @@ server.use('/api/auth', authRouter)
 
 server.get('/', (req, res) => {
     // console.log(req.session)
+
     res.json({ api: 'is working' })
 })
 
